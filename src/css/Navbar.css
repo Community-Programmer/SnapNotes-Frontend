@@ -1,0 +1,130 @@
+
+.navbar{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #B7F9E7;
+    box-shadow: 0 0.3rem 1rem gray;
+    height: 6rem;
+    width: 100%;
+    z-index: 2;
+}
+
+.links-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* border: 2px solid black; */
+}
+
+.navlinks{
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    
+}
+.navbar i{
+    display: none;
+}
+
+
+.navlinks li{
+    list-style: none;
+}
+
+.navlinks li a{
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: black;
+    font-family:sans-serif,Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.navlinks li a:hover{
+    color: #00DB82;
+}
+
+.logo a{
+    text-decoration: none;
+    color: black;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    margin: 6rem;
+}
+
+.btn-container{
+    margin: 2.5rem;
+}
+
+
+.session-btn{
+    border: 1px solid #00985D;
+    border-radius: 1rem;
+    background-color: #00DB82;
+    padding: 10px 15px;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+.session-btn:hover{
+    background-color: #00985D;
+    color: white;
+}
+
+.btn-container span{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 2rem;
+}
+
+.session-btn-logout{
+    border: 1px solid #cc0909;
+    background-color: #c99592;
+    border-radius: 1rem;
+    padding: 10px 15px;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.session-btn-logout:hover{
+    background-color: #d15c5c;
+    color: white;
+} 
+
+
+@media screen and (max-width:786px){
+    
+    .links-container{
+      position: absolute;
+      flex-direction: column;
+      background-color: #f1f5f1;
+      top: 100%;
+      padding: 1.8rem 0;
+      gap:1.5rem;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 36;
+    }
+    .navlinks{
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .navbar i{
+      display: block;
+      margin: 3rem;
+    }
+  
+    .btn-container{
+      margin: 0;
+    }
+  
+    .links-container.active{
+      transform: translateX(0);
+      
+  }
+  
+    
+  }

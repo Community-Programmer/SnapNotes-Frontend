@@ -1,0 +1,140 @@
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 , 0 , 0 , 0.7);
+    z-index: 3;
+  }
+
+  .modal-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    width: 50%;
+    background-color: white;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    /* overflow: auto; */
+  }
+  .modal-content label{
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .note-input{
+    margin-bottom: 10px;
+    margin-top: 5px;
+    padding: 10px 0;
+    width:100%;
+    border: 1px solid black;
+    border-radius: 5px;
+     
+   }
+
+  .close {
+    position: absolute;
+    top: 1px;
+    right: 5px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .color-picker{
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .color-selector{
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 100%;
+  }
+
+  .color-selector:hover{
+    border: 2px solid red;
+  }
+
+  #color1{
+    background-color:  #ffffca;
+  }
+
+  #color2{
+    background-color: rgb(208, 253, 204);
+  }
+
+  #color3{
+    background-color: #cae5ee;
+  }
+
+  #color4{
+    background-color: #ffe8ec;
+  }
+  #color5{
+    background-color: #f2f2f2;
+  }
+  #color6{
+    background-color:  #ffc4ba;
+  }
+ 
+
+
+/* Overiding Some quill Css */
+
+
+  .editor-container {
+    margin-top: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: -1;
+   
+  }
+
+  .ql-container.ql-snow {
+    height: 200px;
+    overflow: auto;
+}
+
+
+
+  .ql-tooltip {
+    left: unset !important;
+}
+
+/* Add Note Button Styling */
+
+.add-note-btn{
+    padding: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    background-color: #00DB82;
+    border: 1px solid #00985D;
+    border-radius: 1rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.add-note-btn:hover{
+    background-color: #00995E;
+    border: 1px solid #00DB82;
+  }
+
+
+  @media  screen and (max-width: 768px) {
+    .modal-content{
+     width: 85%;
+    }
+
+  }
+
+  @media  screen and (max-width: 1024px) and (min-width:768px){
+    .modal-content{
+     width: 65%;
+    }
+
+  }

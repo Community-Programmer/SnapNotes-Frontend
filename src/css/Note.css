@@ -1,0 +1,63 @@
+.container{
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 64px);
+    position: absolute;
+    margin-top: 60px;
+}
+
+.notebox{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    margin-top: 70px;
+    gap: 20px;
+   
+}
+
+.text h2{
+    font-size: 3rem;
+}
+
+.text h2 span{
+    color: #00D783;
+}
+
+.note-btn{
+    padding: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 3rem;
+    background-color: #00DB82;
+    border: 1px solid #00985D;
+    border-radius: 1rem;
+    width: 20rem;
+    cursor: pointer;
+}
+
+.note-btn:hover{
+    background-color: #00995E;
+    border: 1px solid #00DB82;
+  }
+
+  .note-btn-bottom{
+    position: fixed;
+    padding: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgb(84, 167, 223);
+    bottom: 20px;
+    right: 20px;
+  }
+  
+
+
+  @media only screen and (max-width: 768px) {
+    .container{
+        flex-direction: column;
+    }
+    
+  }

@@ -1,0 +1,135 @@
+.note-box {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    padding: 15px 15px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.note-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.note-tag{
+    font-size: 1.4rem;
+}
+
+.note-content {
+    font-size: 1.5rem;
+    margin-bottom: 2px;
+}
+
+/* Style for delete and edit icons */
+.note-icons {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: inherit;
+
+}
+
+.update-timestamp{
+    position: absolute;
+    font-size: 1.1rem;
+    color: #918f8f;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.timestamp{
+    display: inline;
+    font-size: 1.2rem;
+    /* font-weight: bolder; */
+    color: #918f8f;
+    margin: 5px;
+}
+
+.note-icons i{
+    float: right;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.note-icons i:hover{
+    color: red;
+}
+
+
+/* Optional: Add hover effect */
+
+
+
+
+.note-box-toogle {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    height: 85%;
+    z-index: 9999; /* make sure it's on top of other elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    transition: width 0.5s ease-in-out;
+}
+
+
+.note-icons-toogle {
+    position: sticky;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+
+}
+
+/* Scrollbar Design */
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: inherit; 
+  }
+   
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  @media only screen and (max-width: 884px) {
+    .note-box {
+        width: 90vw;
+        height: 30vh;
+    }
+
+    .note-box-toogle {
+        width:90%;
+        height: 85%;
+        
+    }
+    
+    
+    
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    .container{
+        flex-direction: column;
+    }
+    
+  }
