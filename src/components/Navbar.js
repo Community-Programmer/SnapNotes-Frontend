@@ -17,14 +17,18 @@ const Navbar = () => {
   const {userName,setuserName,alert,setAlert}=context
 
   const handleLogout = async()=>{
-   await fetch(`${API_BASE_URL}/user/logout`,{
+   const response = await fetch(`${API_BASE_URL}/user/logout`,{
       method:'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       credentials:'include'
     })
-    setuserName(null)
-    localStorage.removeItem('username');
-    navigate('/')
-    console.log("CHeck")
+    if(response.ok){
+      setuserName(null)
+      localStorage.removeItem('username');
+      navigate('/')
+    }
 
   }
 
