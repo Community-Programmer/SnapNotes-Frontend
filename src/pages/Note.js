@@ -23,21 +23,18 @@ const Note = ({setProgress}) => {
   };
 
   useEffect(()=>{
-    if(!isUserLoggedIn()){
-      navigate('/login')
-      showAlert('Please Login to Fetch Your Notes', 'info')
-    }
-    else{
-      fetchNote()
+    const loggedIn = isUserLoggedIn();
+
+    if (!loggedIn) {
+      navigate('/login');
+      showAlert('Please Login to Fetch Your Notes', 'info');
+    } else {
+      fetchNote();
     }
     setProgress(10)
     setTimeout(()=>{
       setProgress(100)
     },500)
-
-    
-
-    
 
   // eslint-disable-next-line
   },[])

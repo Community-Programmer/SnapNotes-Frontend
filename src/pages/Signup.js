@@ -57,7 +57,7 @@ const Signup = ({setProgress}) => {
      
         <form className="auth-form" onSubmit={handlesubmit}>
         <h1>Join <span>SnapNotes</span> Today</h1>
-        <p>Welcome to SnapNotes, your digital note-taking companionq</p>
+        <p>Welcome to SnapNotes, your digital note-taking companion.</p>
         <label htmlFor="username">Username</label>
         <input type="username" name="username" id="username" value={credential.username} onChange={handlechange} placeholder='Enter Username' maxlength="25"  required/>
         <label htmlFor="email">Email</label>
@@ -67,7 +67,7 @@ const Signup = ({setProgress}) => {
         <div class="show">
               <input type="checkbox" onClick={showpass}/> Show Password
           </div>
-        <button className='auth-btn' type="submit">Login</button>
+        <button className='auth-btn' type="submit">Sign Up</button>
         <p>Already have an account? <Link to='/login'>Log in here</Link> </p>
         
         </form>

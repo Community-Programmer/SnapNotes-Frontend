@@ -46,7 +46,7 @@ const Login = ({setProgress}) => {
     if(response.ok){
       
       // window.location.reload()
-      showAlert('Login Successfull', 'success')
+      showAlert('Login Successful', 'success')
       setuserName(json.username)
       setTimeout(()=>{
         navigate('/')
