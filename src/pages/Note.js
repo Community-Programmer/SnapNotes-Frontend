@@ -1,5 +1,4 @@
 import React, { useContext,useEffect } from 'react'
-import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom';
 import noteAppcontext from '../context/Appcontext/Context';
 import '../css/Note.css'
@@ -7,6 +6,7 @@ import noteImage from '../images/note-image.jpg'
 import NoteBox from '../components/NoteBox';
 import NoteModalBox from '../components/NoteModalBox';
 import AlertModal from '../components/AlertModal';
+import Cookies from 'js-cookie';
 
 
 
@@ -19,6 +19,7 @@ const Note = ({setProgress}) => {
   
   const isUserLoggedIn = () => {
     const token = Cookies.get('token'); 
+    console.log(token,!!token)
     return !!token; 
   };
 

@@ -79,7 +79,6 @@ const NoteBox = ({ note,deleteNote, id}) => {
 
   var note_timestamp=moment(note.createdAt).format('MMMM Do YYYY, h:mm:ss a')
   var update_note_timestamp=moment(note.updatedAt).format("YYYYMMDD hh:mm:ss a")
-  console.log(update_note_timestamp)
 
   const [updateTime,setTimeupdate]=useState(null)
 
