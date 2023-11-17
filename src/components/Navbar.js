@@ -22,6 +22,7 @@ const Navbar = () => {
       credentials:'include'
     })
     setuserName(null)
+    localStorage.removeItem('username');
     navigate('/')
     console.log("CHeck")
 
@@ -39,8 +40,8 @@ const Navbar = () => {
             <li><Link to="/contact" onClick={toggleNavbar}>Contact Us</Link></li>
         </ul>
         <div className="btn-container">
-          {!userName && <><Link to='/login'><button className="session-btn">Login</button></Link>
-            <Link to='/signup'><button className="session-btn">Sign up</button></Link></>}
+          {!userName && <><Link to='/login'><button onClick={toggleNavbar} className="session-btn">Login</button></Link>
+            <Link to='/signup'><button className="session-btn" onClick={toggleNavbar}>Sign up</button></Link></>}
           {userName && <> <span><Link>{userName}</Link></span><Link><button onClick={handleLogout} className="session-btn-logout">Logout</button></Link></>}
             
         </div>

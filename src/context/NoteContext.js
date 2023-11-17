@@ -8,6 +8,7 @@ const NoteContext = (props) => {
   const [alert, setAlert] = useState(null);
   const [showAlertModal,setAlertModal]=useState(false)
   const [isEdit, setisEdit] = useState(false);
+  const [isloaded, setisLoaded] = useState(false);
   const [notes,setNote]=useState([])
   const [noteColor,setNoteColor]=useState("")
   const [noteId,setNoteId]=useState("")
@@ -19,20 +20,27 @@ const NoteContext = (props) => {
   };
 
 
-  useEffect(()=>{
+  useEffect(() => {
+    const checkAuthentication = async () => {
+        const response = await fetch(`${API_BASE_URL}/user/verify`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          credentials: 'include',
+        });
 
-      fetch(`${API_BASE_URL}/user/verify`,{
-        method:'GET',
-        headers:{
-          "Content-Type": "application/json"
-        },
-        credentials:'include'
-      }).then((response)=>{
-        response.json().then((userInfo)=>{
-          setuserName(userInfo.username)
-        })
-      })
-  },[])
+        const json= await response.json()
+        if (json.ok === true) {
+          console.log(json)
+          localStorage.setItem('username', json.data.username);
+          setuserName(localStorage.getItem('username'))
+        }
+    };
+    checkAuthentication();
+    
+  // eslint-disable-next-line
+  }, []); 
 
   //State For  Notes
   const [noteValue,setNotevalue] = useState({title:"",tag:"",description:""})
@@ -43,19 +51,21 @@ const NoteContext = (props) => {
 
   //Note Fetch Request
   const fetchNote= async()=>{
-    const respone= await fetch(`${API_BASE_URL}/note/getnotes`,{
+    const response= await fetch(`${API_BASE_URL}/note/getnotes`,{
       method:'GET',
       credentials:'include'
     })
-    const json= await respone.json()
+    const json= await response.json()
     console.log('fetch json',json)
+    setisLoaded(true)
     setNote(json)
+   
   }
 
   //Add notes
   const addNotes=async()=>{
     const {title,tag,description}=noteValue
-    const respone= await fetch(`${API_BASE_URL}/note/addnotes`,{
+    const response= await fetch(`${API_BASE_URL}/note/addnotes`,{
       method:'POST',
       credentials:'include',
       headers: {
@@ -63,14 +73,14 @@ const NoteContext = (props) => {
       },
       body:JSON.stringify({title:title,tag:tag,color:noteColor,description:description})
     })
-    const json= await respone.json()
+    const json= await response.json()
     console.log(json)
     setNotevalue({...noteValue,title:"",tag:""});
     var element = document.getElementsByClassName("ql-editor");
     element[element.length-1].innerHTML = ""
     document.getElementById("myModal").style.display = "none";
 
-    if(respone.ok){
+    if(response.ok){
       showAlert('Note Created!', 'success')
     }
     fetchNote()
@@ -79,14 +89,14 @@ const NoteContext = (props) => {
 
 //Delete note
 const deleteNote=async(id)=>{
-const respone = await fetch(`${API_BASE_URL}/note/deletenotes/${id}`,{
+const response = await fetch(`${API_BASE_URL}/note/deletenotes/${id}`,{
   method: 'DELETE',
   credentials: 'include'
 })
-const json= await respone.json()
+const json= await response.json()
 console.log(json)
 fetchNote()
-if(respone.ok){
+if(response.ok){
   showAlert('Note Deleted!', 'success')
 }
 }
@@ -116,7 +126,7 @@ fetchNote()
     <noteAppcontext.Provider value={{userName,setuserName,alert,setAlert,
     showAlert,fetchNote,notes,addNotes,handlechange,noteValue,setNotevalue,
     noteColor,setNoteColor,deleteNote,setisEdit,isEdit,updatenote,setNoteId
-    ,noteId,showAlertModal,setAlertModal}}>
+    ,noteId,showAlertModal,setAlertModal,isloaded, setisLoaded}}>
        {props.children}
     </noteAppcontext.Provider>
   )

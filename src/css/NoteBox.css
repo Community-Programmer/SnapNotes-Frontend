@@ -7,6 +7,7 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin: 20px;
 }
 
 .note-title {
@@ -78,6 +79,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
     transition: width 0.5s ease-in-out;
+    margin: 20px;
 }
 
 
@@ -110,15 +112,25 @@
     background: #555; 
   }
 
+  @media only screen and (max-width: 942px) {
+    .note-box {
+        margin: 5px;
+    }
+
+
+  }
+
   @media only screen and (max-width: 884px) {
     .note-box {
         width: 90vw;
-        height: 30vh;
+        height: 50vh;
+    
     }
 
     .note-box-toogle {
         width:90%;
         height: 85%;
+        margin-top: 30px;
         
     }
     

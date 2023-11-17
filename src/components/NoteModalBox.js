@@ -51,14 +51,6 @@ const NoteModalBox = () => {
   }
   
 
-  window.onclick = function(event) {
-    if (event.target === modal) {
-      modal.style.display = "none";
-      setNotevalue({...noteValue,title:"",tag:""});
-      element[element.length-1].innerHTML = ""
-    }
-    
-  }
 
   
   const colorSelectors = document.querySelectorAll('.color-selector');
