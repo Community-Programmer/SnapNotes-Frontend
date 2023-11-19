@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   const context=useContext(noteAppcontext)
-  const {userName,setuserName,alert,setAlert}=context
+  const {userName,setuserName,alert,setAlert,setNote}=context
 
   const handleLogout = async()=>{
    const response = await fetch(`${API_BASE_URL}/user/logout`,{
@@ -26,6 +26,7 @@ const Navbar = () => {
     })
     if(response.ok){
       setuserName(null)
+      setNote([])
       localStorage.removeItem('username');
       navigate('/')
     }

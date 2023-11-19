@@ -126,7 +126,7 @@ fetchNote()
 
   return (
     <noteAppcontext.Provider value={{userName,setuserName,alert,setAlert,
-    showAlert,fetchNote,notes,addNotes,handlechange,noteValue,setNotevalue,
+    showAlert,fetchNote,notes,setNote,addNotes,handlechange,noteValue,setNotevalue,
     noteColor,setNoteColor,deleteNote,setisEdit,isEdit,updatenote,setNoteId
     ,noteId,showAlertModal,setAlertModal,isloaded, setisLoaded}}>
        {props.children}
