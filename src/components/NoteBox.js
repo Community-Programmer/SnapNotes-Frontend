@@ -52,7 +52,8 @@ const NoteBox = ({ note,deleteNote, id}) => {
     setNotevalue({...noteValue,title:notes[id].title,tag:notes[id].tag});
     // setNotevalue({title: notes[id].title ,tag:notes[id].tag})
     var element = document.getElementsByClassName("ql-editor")
-    element[element.length-1].innerHTML = notes[id].description
+    console.log(element)
+    element[0].innerHTML = notes[id].description
     setNoteColor(notes[id].color)
     setisEdit(true)
     setNoteId(note._id)

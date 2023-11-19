@@ -53,12 +53,14 @@ const NoteContext = (props) => {
   const fetchNote= async()=>{
     const response= await fetch(`${API_BASE_URL}/note/getnotes`,{
       method:'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       credentials:'include'
     })
     const json= await response.json()
-    console.log('fetch json',json)
-    setisLoaded(true)
     setNote(json)
+    setisLoaded(true)
    
   }
 
