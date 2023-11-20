@@ -13,7 +13,7 @@ import API_BASE_URL from '../config/Config';
 const Note = ({setProgress}) => {
 
   const context=useContext(noteAppcontext)
-  const {showAlert,fetchNote,notes,deleteNote,setisEdit,setNotevalue,noteValue,showAlertModal,isloaded}=context
+  const {showAlert,fetchNote,notes,deleteNote,setisEdit,showAlertModal,isloaded}=context
   const navigate=useNavigate();
 
   
@@ -59,9 +59,6 @@ const Note = ({setProgress}) => {
 
   const displayModalBox=()=>{
     setisEdit(false)
-    setNotevalue({...noteValue,title:"",tag:""});
-    var element = document.getElementsByClassName("ql-editor");
-    element[element.length-1].innerHTML = ""
     
   }
   return (

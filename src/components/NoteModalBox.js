@@ -46,7 +46,8 @@ const NoteModalBox = () => {
   var element = document.getElementsByClassName("ql-editor");
   closeModalBtn.onclick = function() {
     setNotevalue({...noteValue,title:"",tag:""});
-    element[element.length-1].innerHTML = ""
+    console.log(element)
+    element[0].innerHTML = ""
     modal.style.display = "none";
   }
   
