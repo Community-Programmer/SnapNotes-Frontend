@@ -52,7 +52,7 @@ const handleSubmit=async(e)=>{
       <h1>Contact Us - <span>SnapNotes</span></h1>
       <p>Contact us using below form or mail us at - sarthakpatel230204@gmail.com</p>
         <label htmlFor="name">Name</label>
-        <input type="name" name="name" id="name" value={info.name} onChange={handlechange} placeholder='Enter Email'  required/>
+        <input type="name" name="name" id="name" value={info.name} onChange={handlechange} placeholder='Enter Name'  required/>
         <label htmlFor="email">Email</label>
         <input type="email" name="email" id="email" value={info.email} onChange={handlechange} placeholder='Enter Email'  required/>
         <label htmlFor="message">Message</label>

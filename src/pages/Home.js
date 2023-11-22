@@ -19,7 +19,7 @@ const Home = ({setProgress}) => {
     <div className="main">
       
        <div className="text">
-        <h1>Welcome to <span>SnapNotes!</span>, Where Ideas Find a Home. Effortlessly capture, organize, and access your notes.</h1>
+        <h1>Welcome to <span className='text-style'>SnapNotes!</span>, Where Ideas Find a Home. Effortlessly capture, organize, and access your notes.</h1>
         <p>SnapNotes is the perfect platform for all your note-taking needs. From quick to-do lists to in-depth project plans, we've got you covered. With seamless organization features, collaboration options, and user-friendly design, YourNote is your ideal digital notebook.</p>
         {!userName && <Link to='/signup'><button className="cta-btn">Get Started</button></Link>}
         {userName && <Link to='/notes'><button className="cta-btn">Open Notebook</button></Link>}

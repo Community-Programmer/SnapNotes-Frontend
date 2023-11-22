@@ -46,7 +46,9 @@
   background-color: #00985D;
     color: white;
 }
-
+.text-style{
+  color: #00DB82;
+}
 @media only screen and (min-width: 768px) {
   .main {
       flex-direction: row;
