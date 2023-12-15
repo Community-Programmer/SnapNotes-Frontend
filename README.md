@@ -2,6 +2,8 @@
 # SnapNotes
 SnapNotes is a cutting-edge note-taking application that seamlessly combines the power of React for the front end, Express for the backend, and MongoDB for cloud-based storage. This dynamic synergy allows users to effortlessly create, read, update, and delete notes, providing a streamlined and intuitive experience for organizing thoughts and ideas.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2aeb2b2e-4089-4ec5-957e-7240e7478525/deploy-status)](https://app.netlify.com/sites/snapnote/deploys)
+
 ![image](https://github.com/Community-Programmer/SnapNotes-Frontend/assets/76515568/19be7e90-ad26-4c9d-beb7-58ed235c3555)
 
 
